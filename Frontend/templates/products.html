@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+     <h1>All Products  Page</h1>
+     
+     <table>
+          <thead>
+               <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Code</th>
+                    <th>Product GST</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+               </tr>
+          </thead>
+          <tbody>
+               <tr>
+                    {% for product in all_products %}
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.product_code }}</td>
+                    <td>{{ product.gst }}</td> 
+                    <td><a href="{% url 'product_update' product.id %} "><button class="U1">Update</button></a></td> 
+                    <td><a href="{% url 'delete_product' product.id %}"><button class="D1">Delete</button></a></td> 
+                   </tr>
+                    {% endfor %}
+          </tbody>
+
+     </table>     
+      {% if messages %}
+                     <ul class="messages">
+                     {% for message in messages %}
+                     <li class="{{ message.tags }}">{{ message }}</li>
+                     {% endfor %}
+                     </ul>
+                     {% endif %}
+                    
+     {% endblock content %}

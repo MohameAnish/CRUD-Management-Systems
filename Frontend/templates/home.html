@@ -1,0 +1,25 @@
+    {%extends 'base.html' %}
+
+   {% block content %}
+
+
+    <h1 style="font-family: sans-serif;">Index Page Django Application </h1>
+     <h1 style="font-family: sans-serif;">Welcome to Django Application</h1>
+
+     {% if author == "admin" %}
+       <h1 style="font-family: sans-serif;">Hello  {{name}} </h1>
+     
+     {% elif author == "admins" %}
+     <h1 style="font-family: sans-serif;">Hello  {{name}} and {{name1}} </h1>
+
+     {% else %}
+     <h1 style="font-family: sans-serif;">Hello User</h1>
+     {% endif %}
+
+          
+     {% for i in technologies %}
+     <h1 style="font-family: sans-serif;">{{i}}</h1>
+
+     {% endfor %}   
+     
+     {% endblock content %} 

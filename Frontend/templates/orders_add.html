@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+<h1>Orders Add Pages</h1>
+<form action="" method="POST">
+     {% csrf_token %}
+     <table>
+          <thead>
+               <tr>
+                    
+                    <th>Customer Reference</th>
+                    <th>Product Reference</th>
+                    <th>Order Date</th>
+                    <th>Order Number</th>
+                    <th>Quantity</th>
+               </tr> 
+          </thead>   
+          <tbody>   
+               <tr>
+                    
+                    <td>{{ order_form.customer_reference }}</td>
+                    <td>{{ order_form.product_reference }}</td>
+                    <td>{{ order_form.order_date }}</td>
+                    <td>{{ order_form.order_number }}</td>
+                    <td>{{ order_form.quantity }}</td> 
+               </tr>     
+          </tbody>
+     </table>
+     <button type="submit" class="sub">Submit</button>
+</form>
+     
+
+
+
+{% endblock content %}

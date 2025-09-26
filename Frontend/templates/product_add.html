@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+     <h1>Product Adding Page</h1>
+<form method="POST" style="font-family: sans-serif;">
+     {% csrf_token %}
+      <table>
+      <thead>
+          <tr>
+               <th>Product Name</th>
+               <th>Product Price</th>
+               <th>Product Code</th>
+               <th>Product GST</th>
+               
+          </tr>
+          </thead>    
+          <tbody>
+               <tr>
+               
+                    <td>{{ product_form.name }}</td>
+                    <td>{{ product_form.price }}</td>
+                    <td>{{ product_form.product_code }}</td>
+                    <td>{{ product_form.gst }}</td> </tr>
+                </tbody>
+               </table>
+              
+     
+     <button type="submit" class="sub">Submit</button>
+     
+</form>
+    
+{% endblock content %}
